@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.7.5/axios.min.js" integrity="sha512-01Pe9P3mJM/4c80VuoYEGHlspKGbd9uWQe9HtdLsdTqV0CS1kz8ca44sinVEXEvlZNciMmsAjeEbm5ZxHC7yYg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Login</title>
+    <style>
+        /* setting default styles for all elements */
+        *{
+            margin: 0px;
+            padding: 0px;
+            outline: 0px;
+        }
+        /* Main body styling */ 
+        body {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-image: url('./im.png'); 
+            background-repeat: no-repeat;
+            background-position: center;
+            background-attachment: fixed;
+            background-size: cover;
+            background-blend-mode: overlay;
+        } 
+        /* Styling for the main login container */
+        .login{
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            width: 100vw;
+            height: 100vh;   
+        }
+        /* Icon styling */
+        .fa-solid fa-user lo{
+            position: absolute;
+        }
+        /* Styling for the login form box */
+        .log{
+            background-color:#FFFFFF ;
+            height: 400px;
+            width:320px;
+            box-shadow: 0px 0px 2px 3px #5abddb;
+            display: flex;
+            border-radius: 50px;
+            flex-direction: column;
+            justify-content: space-around;
+            align-items: center;
+            border: 1px solid #a3f0f8;
+             padding: 40px 40px ; 
+        }
+        /* Input field styling */
+      
+        input[type=text], input[type=password] {
+         width: 100%;
+         padding: 12px 20px;
+         padding-left: 40px;
+         border-radius: 10px;
+         border: 2px solid rgba(214, 221, 221, 0.909);
+         display: inline-block;
+         box-sizing: border-box;
+         background:#F9F9F9 ;
+       }
+       /* Hover effect for input fields */
+       input:hover{
+        border: 2px solid #11bef3;
+       }
+       /* styling for the submit button */
+       button{
+        height: 40px;
+        width: 200px;
+        border-radius: 20px;
+        margin-top: 10px;
+        border:3px solid white;
+        cursor: pointer;
+        background-color:#3dc1ba;;
+        font-weight: bolder;
+        color:white;
+       }
+       /* Styling for from labels */
+       label{
+        padding-left: 10px;
+        font-size: 17px;
+       }
+       /* Container for input fields and icons */
+       .c{
+        width:90%;
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-around;
+        flex-direction: column;
+       }
+       /* Username icon Positioning */
+       .u{
+        position: relative;
+        align-items: center;
+        top: 50px;
+        color:#23ebf1;
+        left: 10px;
+       }
+       /* Password icon positioning */
+       .p{
+        position: relative;
+        align-items: center;
+        top:65px;
+        left: 10px;
+        color:#23ebf1;
+       }
+       /* Link styling */
+       a{
+        text-decoration: none;
+        padding-left: 100px;
+        color:#138b85;
+       }
+       /* login Icon styling */
+       .lo{
+        font-size: 100px;
+        height: 120px;
+        background-color: #FFFFFF ;
+        box-shadow: 0px 0px 2px 3px #5abddb ; 
+        width:120px;
+        border: 1px solid #59dad4; 
+        text-align: center;
+        position: relative;
+        padding: 6px;
+        left: 0%;
+        color: #BEE4F4;
+        top:10%;
+        border-radius: 50%;
+
+       }
+       /* Eye icon Styling for password */
+       .e{
+        position: relative;
+        left:90%;
+        top:50px;
+        cursor: pointer;
+       }
+       /* Error message Styling */
+       .msg{
+        color: #e31111;
+        position: relative;
+        font-size: 20px;
+        text-align: center;
+        right: 50px;
+        padding-left: 100px;
+        
+       }
+       /* Container for "Remember me" checkekbox */
+       .for{
+        padding-top:10px;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+       }
+    
+       /* Media query for devices with max-width of 560px */
+       @media only screen and (max-width:560px){ 
+    
+      .log{
+        width: 50%;
+        height:400px;
+      }
+        body{
+            background-color: #a3f0f8;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        /* Hides marquee text on smaller devices */
+        marquee{
+            display: none;
+        }
+    .msg{
+        font-size: 15px;
+    }
+        button{
+            height: 40px;
+            width: 90px;
+            left: 0px;
+             padding: 10px;
+       }
+       .for{
+        display: flex;
+        font-size: 15px;
+       }
+       a{
+        padding-left: 0px;
+        position: relative;
+        left:0px;
+        color: #25b3c0;
+       }
+       .u{
+        position: relative;
+       }
+       .p{
+        top:65px;
+       }
+       .e{
+        position: relative;
+        left:82%;
+        top:50px;
+       }
+    }
+
+
+    </style>
+</head>
+<body>
+    <div class="login">
+        <!-- Marquee for a welcome message -->
+     <marquee direction="right"><h1 style="color: #543131;">Welcome Back! Please Log In</h1></marquee>
+       <!-- User Icon  -->
+        <i class="fa-solid fa-user lo" ></i>
+        <!-- Login form container -->
+    <div class="log">
+        <br>
+        <br>
+        <h2 style="text-align: center;">Login</h2> 
+        <!-- Error message -->
+        <div class="msg"></div>
+        <div class="c">
+         <span><i class="fa-solid fa-user u" ></i></span>
+         <!-- Username field -->
+        <label for="uid"><b>Username</b></label>
+        <input type="text" placeholder="Email" name="id"  id="uid" required></div>
+        <!--Password field -->
+         <div class="c">
+        <span><i class="fa-solid fa-lock p"></i></span>
+        <span class="fa-regular fa-eye-slash e" onclick="togglePassword()"></span>
+        <label for="pwd"><b>Password</b></label>
+        <input type="password" placeholder="Password" name="pwd"  id="pwd" ></div>
+        <!--Remember me check box-->
+        <span class="for"><input type="checkbox"><p> Remember me</p> </span><br>
+        <!-- submit button -->
+        <button onclick="login()">Submit</button><br>
+    </div>
+</div>
+    <script>
+        // login functionality
+        function login(){
+        let userId=document.getElementById("uid").value
+        let password=document.getElementById("pwd").value
+        let data = {"userId":userId,"password":password}
+        let pattern=/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9]+\.[a-zA-Z]{2,}$/
+        //Email and password validation
+        if(pattern.test(userId)){
+            if(password.length>=6){
+    
+                axios.post("https://jsonplaceholder.typicode.com/posts",data).then((res)=>{
+                    window.location.href="loder.html"
+                })
+                .catch((err)=>{
+                    console.log(err)
+                })
+            }
+            else{
+            document.getElementsByClassName("msg")[0].innerHTML="check password"
+           
+            }
+        }
+        else{
+          document.getElementsByClassName("msg")[0].innerHTML="Check email"
+
+        }
+        }
+        // Function to toggle password visibility
+        function togglePassword() {
+            let pwd = document.getElementById("pwd");
+            let eyeIcon = document.querySelector(".e");
+
+            if (pwd.type === "password") {
+                pwd.type = "text";
+                eyeIcon.classList.remove("fa-eye-slash");
+                eyeIcon.classList.add("fa-eye");
+            } else {
+                pwd.type = "password";
+                eyeIcon.classList.remove("fa-eye");
+                eyeIcon.classList.add("fa-eye-slash");
+            }
+        }
+        
+    </script>
+    
+</body>
+</html>
+
+
+
+ 

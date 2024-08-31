@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+<style>
+.sp{
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url('./im2.png');
+}
+h2{
+    position: relative;
+    color: #187767; 
+}
+.success{
+    display: none;
+    color:#22bb33;
+    height: 200px;
+    width: 400px;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid cornsilk;
+    font-size: 35px;
+    box-shadow:0px 0px 5px 3px rgb(149, 228, 234) ;
+    position: relative;
+    padding: 25px;
+    background-color: white;
+    border-radius: 20px;
+}
+h4{
+    position: relative;
+    right: 10%;
+    padding-top: 10%;
+}
+i{
+    font-size: 70px;
+    position: relative;
+    left: 30%;
+    bottom: 50px;
+}
+.box{
+    height: 200px;
+    width: 500px;
+    border:2px solid rgb(149, 228, 234);
+    border-radius: 10px;
+    text-align: center;
+    box-shadow:0px 0px 5px 3px rgb(149, 228, 234) ;
+    padding: 25px;
+    background-color: white;
+}
+/* spinner styling */
+.spinner {
+   width: 56px;
+   height: 56px;
+   border-radius: 50%;
+   border: 9px solid;
+   border-color: #dbdcef;
+   border-right-color: #26cde3;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   position: relative;
+   top: 10%;
+   left: 40%;
+   animation: spinner-d3wgkg 1s infinite linear;
+}
+
+@keyframes spinner-d3wgkg {
+   to {
+      transform: rotate(1turn);
+   }
+}
+/* mobile  view */
+@media screen and (max-width:560px){ 
+    .box{
+    width: 200px;
+    height: 100px;
+    font-size: 10px;
+}
+.spinner {
+   width: 20px;
+   height: 20px;
+}
+.success{
+    width: 100px;
+    height: 100px; 
+    text-align: center;
+}
+/* successful message styling  */
+h4{
+    position: relative;
+    padding-top: 25%;
+    padding-right:20px ;
+   text-align: center;
+   font-size: 13px;
+}
+/* Tick mark styling */
+i{
+   padding-left: 25%;
+   padding-top: 50%;
+   font-size: 25px;
+}
+}
+</style>
+</head>
+<body>
+    <div class="sp">
+        <!-- loding message -->
+        <div class="box">
+        <h2> Your login is in progress, hold tight...!</h2>
+        <div class="spinner"></div>
+        </div>
+        <!-- success message -->
+        <div class="success">
+            <i class="fa-regular fa-circle-check"></i>
+           <h4>Login Successful</h4>
+        </div>
+    </div>
+        <script>
+            // upon successful login 
+            setTimeout(()=>{
+                //loding 
+                document.getElementsByClassName("box")[0].style.display="none"
+                //successful message
+                document.getElementsByClassName("success")[0].style.display="flex"
+            },2000)
+            // After 3 secs it is redirected to login page
+            setTimeout(()=>{
+             window.location.href="index.html"
+            },3000)
+         
+        </script>
+
+</body>
+</html>
